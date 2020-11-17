@@ -1,7 +1,15 @@
 internal class SwipingViewModel {
     internal let prevButtonTitle: String = "PREV"
     internal let nextButtonTitle: String = "NEXT"
-    internal let currentPage: Int = 0
+    internal var currentPage: Int = 0
+
+    internal func incrementCurrentPage() {
+        currentPage = min(currentPage + 1, pages.count - 1)
+    }
+
+    internal func decrementCurrentPage() {
+        currentPage =  max(currentPage - 1, 0)
+    }
 
     internal let pages =  [
         Page(

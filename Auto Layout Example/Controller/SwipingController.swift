@@ -39,37 +39,37 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     private func moveSlide(sender: UIButton) {
         guard let id = sender.restorationIdentifier else { return }
 
-        print(id)
-//        var nextIndex = pageControl.currentPage
-//
-//        if id == K.nextButtonId {
-//            nextIndex = min(collectionView.pageControl.currentPage + 1, K.Pages.count - 1)
-//        } else if id == K.prevButtonId {
-//            nextIndex = max(pageControl.currentPage - 1, 0)
-//        }
-//
-//        let indexPath = IndexPath(item: nextIndex, section: 0)
-//        pageControl.currentPage = nextIndex
-//        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        if id == K.nextButtonId {
+            swipingViewModel.incrementCurrentPage()
+
+        } else if id == K.prevButtonId {
+            swipingViewModel.decrementCurrentPage()
+        }
+
+        let indexPath = IndexPath(item: swipingViewModel.currentPage, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+
+//      pageControl.currentPage = nextIndex
+
     }
 
-//    override func viewWillTransition(to size: CGSize,
-//                                     with coordinator: UIViewControllerTransitionCoordinator) {
-//        coordinator.animate { (_) in
-//            self.collectionViewLayout.invalidateLayout()
-//
-//            let indexPath = IndexPath(item: self.pageControl.currentPage, section: 0)
-//            self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-//
-//        } completion: { (_) in  }
-//
-//    }
-//
-//    override func scrollViewWillEndDragging(_ scrollView: UIScrollView,
-//                                            withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-//        let index = Int(targetContentOffset.pointee.x / view.frame.width)
+    override func viewWillTransition(to size: CGSize,
+                                     with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate { (_) in
+            self.collectionViewLayout.invalidateLayout()
+
+            let indexPath = IndexPath(item: self.swipingViewModel.currentPage, section: 0)
+            self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+
+        } completion: { (_) in  }
+
+    }
+
+    override func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+                                            withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let index = Int(targetContentOffset.pointee.x / view.frame.width)
 //        pageControl.currentPage = index
-//    }
+    }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -41,8 +41,8 @@ class SwipingView: UICollectionView {
 
 //        bottomControlsStackView.pinEdgesToSuperview(edges: [.bottom, .left, .right])
 //        bottomControlsStackView.set(dimension: .height, to: 50)
-        
-//        TODO:
+
+//        TODO: 
 
         NSLayoutConstraint.activate([
             bottomControlsStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
