@@ -12,8 +12,6 @@
 		9556EDBA256387560095C7E6 /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDB9256387560095C7E6 /* colors.swift */; };
 		9556EDBF256388590095C7E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9556EDBE256388590095C7E6 /* LaunchScreen.storyboard */; };
 		9556EDC225638A490095C7E6 /* UIView+Extennsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDC125638A490095C7E6 /* UIView+Extennsions.swift */; };
-		9556EDC7256392DB0095C7E6 /* SwipingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDC6256392DB0095C7E6 /* SwipingView.swift */; };
-		9556EDCC2563B2D00095C7E6 /* SwipingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDCB2563B2D00095C7E6 /* SwipingViewModel.swift */; };
 		9556EDD32564D85C0095C7E6 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDD22564D85C0095C7E6 /* Networking.swift */; };
 		9556EDD62564D86D0095C7E6 /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDD52564D86D0095C7E6 /* EndpointType.swift */; };
 		9556EDD92564D8A40095C7E6 /* TallinnJobApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDD82564D8A40095C7E6 /* TallinnJobApi.swift */; };
@@ -22,9 +20,12 @@
 		9556EDE22564D9800095C7E6 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDE12564D9800095C7E6 /* Response.swift */; };
 		9556EDE52564DAA10095C7E6 /* ContactDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDE42564DAA10095C7E6 /* ContactDetails.swift */; };
 		9556EDEA2564E0CA0095C7E6 /* TartuJobApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDE92564E0CA0095C7E6 /* TartuJobApi.swift */; };
+		9556EDF0256518690095C7E6 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDEF256518690095C7E6 /* OnboardingViewModel.swift */; };
+		9556EDF4256519840095C7E6 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDF3256519840095C7E6 /* OnboardingView.swift */; };
+		9556EDFA25652E560095C7E6 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDF925652E560095C7E6 /* OnboardingViewController.swift */; };
+		9556EDFE25652EFD0095C7E6 /* CollectionViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDFD25652EFD0095C7E6 /* CollectionViewData.swift */; };
 		956C0F63255EEC49000831FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C0F62255EEC49000831FC /* AppDelegate.swift */; };
 		956C0F6C255EEC4B000831FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956C0F6B255EEC4B000831FC /* Assets.xcassets */; };
-		95C15B1A255FB689003A56D1 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C15B19255FB689003A56D1 /* SwipingController.swift */; };
 		95C15B1D255FE218003A56D1 /* PageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C15B1C255FE218003A56D1 /* PageCellView.swift */; };
 		95C15B20255FEF2B003A56D1 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C15B1F255FEF2B003A56D1 /* K.swift */; };
 		95C15B23255FF2CD003A56D1 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C15B22255FF2CD003A56D1 /* Page.swift */; };
@@ -36,8 +37,6 @@
 		9556EDB9256387560095C7E6 /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		9556EDBE256388590095C7E6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9556EDC125638A490095C7E6 /* UIView+Extennsions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extennsions.swift"; sourceTree = "<group>"; };
-		9556EDC6256392DB0095C7E6 /* SwipingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingView.swift; sourceTree = "<group>"; };
-		9556EDCB2563B2D00095C7E6 /* SwipingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingViewModel.swift; sourceTree = "<group>"; };
 		9556EDD22564D85C0095C7E6 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		9556EDD52564D86D0095C7E6 /* EndpointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
 		9556EDD82564D8A40095C7E6 /* TallinnJobApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallinnJobApi.swift; sourceTree = "<group>"; };
@@ -46,11 +45,14 @@
 		9556EDE12564D9800095C7E6 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		9556EDE42564DAA10095C7E6 /* ContactDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetails.swift; sourceTree = "<group>"; };
 		9556EDE92564E0CA0095C7E6 /* TartuJobApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TartuJobApi.swift; sourceTree = "<group>"; };
+		9556EDEF256518690095C7E6 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		9556EDF3256519840095C7E6 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		9556EDF925652E560095C7E6 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		9556EDFD25652EFD0095C7E6 /* CollectionViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewData.swift; sourceTree = "<group>"; };
 		956C0F5F255EEC49000831FC /* Auto Layout Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Layout Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		956C0F62255EEC49000831FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		956C0F6B255EEC4B000831FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		956C0F70255EEC4B000831FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95C15B19255FB689003A56D1 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
 		95C15B1C255FE218003A56D1 /* PageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCellView.swift; sourceTree = "<group>"; };
 		95C15B1F255FEF2B003A56D1 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		95C15B22255FF2CD003A56D1 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
@@ -98,6 +100,24 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		9556EDF22565195A0095C7E6 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				9556EDF3256519840095C7E6 /* OnboardingView.swift */,
+				95C15B1C255FE218003A56D1 /* PageCellView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		9556EDF825652DD60095C7E6 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				9556EDF925652E560095C7E6 /* OnboardingViewController.swift */,
+				9556EDFD25652EFD0095C7E6 /* CollectionViewData.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		956C0F56255EEC49000831FC = {
 			isa = PBXGroup;
 			children = (
@@ -121,7 +141,7 @@
 			children = (
 				9556EDCF2564D77D0095C7E6 /* Networking */,
 				9556EDC425638A580095C7E6 /* Extensions */,
-				95C15B27256006E3003A56D1 /* ViewModel */,
+				95C15B27256006E3003A56D1 /* Controller */,
 				95C15B26256006DA003A56D1 /* View */,
 				95C15B25256006CC003A56D1 /* Model */,
 				956C0F62255EEC49000831FC /* AppDelegate.swift */,
@@ -139,11 +159,11 @@
 			isa = PBXGroup;
 			children = (
 				95C15B22255FF2CD003A56D1 /* Page.swift */,
-				9556EDCB2563B2D00095C7E6 /* SwipingViewModel.swift */,
 				9556EDDB2564D9500095C7E6 /* Employees.swift */,
 				9556EDDE2564D9720095C7E6 /* Employee.swift */,
 				9556EDE12564D9800095C7E6 /* Response.swift */,
 				9556EDE42564DAA10095C7E6 /* ContactDetails.swift */,
+				9556EDEF256518690095C7E6 /* OnboardingViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,18 +171,17 @@
 		95C15B26256006DA003A56D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9556EDC6256392DB0095C7E6 /* SwipingView.swift */,
-				95C15B1C255FE218003A56D1 /* PageCellView.swift */,
+				9556EDF22565195A0095C7E6 /* Onboarding */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		95C15B27256006E3003A56D1 /* ViewModel */ = {
+		95C15B27256006E3003A56D1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				95C15B19255FB689003A56D1 /* SwipingController.swift */,
+				9556EDF825652DD60095C7E6 /* Onboarding */,
 			);
-			path = ViewModel;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		EF03727A07D547B2391AA22A /* Frameworks */ = {
@@ -288,23 +307,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9556EDC7256392DB0095C7E6 /* SwipingView.swift in Sources */,
 				9556EDE52564DAA10095C7E6 /* ContactDetails.swift in Sources */,
 				9556EDEA2564E0CA0095C7E6 /* TartuJobApi.swift in Sources */,
 				9556EDD32564D85C0095C7E6 /* Networking.swift in Sources */,
 				95C15B1D255FE218003A56D1 /* PageCellView.swift in Sources */,
+				9556EDFE25652EFD0095C7E6 /* CollectionViewData.swift in Sources */,
 				9556EDDF2564D9720095C7E6 /* Employee.swift in Sources */,
 				9556EDE22564D9800095C7E6 /* Response.swift in Sources */,
+				9556EDFA25652E560095C7E6 /* OnboardingViewController.swift in Sources */,
 				9556EDBA256387560095C7E6 /* colors.swift in Sources */,
 				956C0F63255EEC49000831FC /* AppDelegate.swift in Sources */,
-				9556EDCC2563B2D00095C7E6 /* SwipingViewModel.swift in Sources */,
 				95C15B20255FEF2B003A56D1 /* K.swift in Sources */,
+				9556EDF4256519840095C7E6 /* OnboardingView.swift in Sources */,
 				9556EDDC2564D9500095C7E6 /* Employees.swift in Sources */,
 				9556EDC225638A490095C7E6 /* UIView+Extennsions.swift in Sources */,
+				9556EDF0256518690095C7E6 /* OnboardingViewModel.swift in Sources */,
 				9556EDD92564D8A40095C7E6 /* TallinnJobApi.swift in Sources */,
 				9556EDD62564D86D0095C7E6 /* EndpointType.swift in Sources */,
 				95C15B23255FF2CD003A56D1 /* Page.swift in Sources */,
-				95C15B1A255FB689003A56D1 /* SwipingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

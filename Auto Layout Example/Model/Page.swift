@@ -1,7 +1,8 @@
 import Foundation
+import UIKit
 
 struct Page {
-    let imageName: String
+    let image: UIImage?
     let headerText: String
     let description: String
 }

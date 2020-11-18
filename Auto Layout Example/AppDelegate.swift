@@ -6,14 +6,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-            let window = UIWindow()
-            self.window = window
+        let window = UIWindow()
+        self.window = window
 
-            let swipingViewModel = SwipingViewModel()
-            let swipingController = SwipingController(swipingViewModel: swipingViewModel)
+        let onboardingViewController = OnboardingViewController(
+            viewModel: OnboardingViewModel()
+        )
 
-            window.rootViewController = swipingController
-            window.makeKeyAndVisible()
+        window.rootViewController = onboardingViewController
+        window.makeKeyAndVisible()
 
         return true
     }
