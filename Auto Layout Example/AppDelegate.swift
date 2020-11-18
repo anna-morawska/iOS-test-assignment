@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             viewModel: OnboardingViewModel()
         )
 
-        window.rootViewController = onboardingViewController
+        window.rootViewController = UINavigationController(rootViewController: onboardingViewController)
         window.makeKeyAndVisible()
 
         return true

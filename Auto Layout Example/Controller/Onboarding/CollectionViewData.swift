@@ -8,6 +8,13 @@ class CollectionViewData: NSObject {
         }
     }
 
+    public var currentPage: Int {
+            guard let view = collectionView, let frame = collectionView?.visibleCells.first?.frame  else {
+                return 0
+            }
+           return Int(frame.minX / view.frame.size.width)
+    }
+
     weak var collectionView: UICollectionView? {
         didSet {
             collectionView?.dataSource = self
@@ -17,22 +24,18 @@ class CollectionViewData: NSObject {
     }
 
     public func moveSlide(forward: Bool) {
-        guard let view = collectionView, let frame = collectionView?.visibleCells.first?.frame  else {
-            return
-        }
-
-        var currentPage = Int(frame.minX / view.frame.size.width)
+        var scrollToIndex: Int
 
         if forward {
-            currentPage = min(currentPage + 1, pages.count - 1)
+            scrollToIndex = min(currentPage + 1, pages.count - 1)
         } else {
-            currentPage =  max(currentPage - 1, 0)
+            scrollToIndex =  max(currentPage - 1, 0)
         }
 
-        let indexPath = IndexPath(item: currentPage, section: 0)
+        let indexPath = IndexPath(item: scrollToIndex, section: 0)
         collectionView?.scrollToItem(at: indexPath , at: .centeredHorizontally, animated: true)
 
-        pageDidChange?(currentPage)
+        pageDidChange?(scrollToIndex)
     }
 
     private func setup() {
@@ -43,10 +46,7 @@ class CollectionViewData: NSObject {
 
 extension CollectionViewData: UICollectionViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let pageWidth = scrollView.frame.size.width
-        let page = Int(floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1)
-
-        pageDidChange?(page)
+        pageDidChange?(currentPage)
     }
 }
 
@@ -56,7 +56,7 @@ extension CollectionViewData: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PageCellView.Identifier, for: indexPath) as! PageCellView
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PageCellView.Identifier, for: indexPath) as! PageCellView // swiftlint:disable:this force_cast
         let page = pages[indexPath.item]
 
         cell.imageView.image = page.image

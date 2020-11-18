@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 
 class OnboardingViewModel {
@@ -8,23 +7,6 @@ class OnboardingViewModel {
     internal let prevButtonLabel = "PREV"
     internal let prevButtonId = "prevButton"
     internal let nextButtonId = "nextButton"
-
-    internal var tallinnEmployees: [Employee] = []
-    internal var tartuEmployees: [Employee] = []
-
-    internal func getTallinnEmployees() {
-        networking.performNetworkTask(endpoint: TallinnJobApi.employeesList, type: Employees.self) { [weak self] (response) in
-            self?.tallinnEmployees = response.employees
-            print(response.employees)
-        }
-    }
-
-    internal func getTartuEmployees() {
-        networking.performNetworkTask(endpoint: TartuJobApi.employeesList, type: Employees.self) { [weak self] (response) in
-            self?.tartuEmployees = response.employees
-            print(response.employees)
-        }
-    }
 
     internal let pages =  [
         Page(

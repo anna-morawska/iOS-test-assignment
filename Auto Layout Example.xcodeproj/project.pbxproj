@@ -24,6 +24,9 @@
 		9556EDF4256519840095C7E6 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDF3256519840095C7E6 /* OnboardingView.swift */; };
 		9556EDFA25652E560095C7E6 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDF925652E560095C7E6 /* OnboardingViewController.swift */; };
 		9556EDFE25652EFD0095C7E6 /* CollectionViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDFD25652EFD0095C7E6 /* CollectionViewData.swift */; };
+		9556EE062565913B0095C7E6 /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE052565913B0095C7E6 /* ContactListView.swift */; };
+		9556EE09256591490095C7E6 /* ContactListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE08256591490095C7E6 /* ContactListController.swift */; };
+		9556EE0C2565927B0095C7E6 /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE0B2565927B0095C7E6 /* ContactListViewModel.swift */; };
 		956C0F63255EEC49000831FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C0F62255EEC49000831FC /* AppDelegate.swift */; };
 		956C0F6C255EEC4B000831FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956C0F6B255EEC4B000831FC /* Assets.xcassets */; };
 		95C15B1D255FE218003A56D1 /* PageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C15B1C255FE218003A56D1 /* PageCellView.swift */; };
@@ -49,6 +52,9 @@
 		9556EDF3256519840095C7E6 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		9556EDF925652E560095C7E6 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		9556EDFD25652EFD0095C7E6 /* CollectionViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewData.swift; sourceTree = "<group>"; };
+		9556EE052565913B0095C7E6 /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
+		9556EE08256591490095C7E6 /* ContactListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListController.swift; sourceTree = "<group>"; };
+		9556EE0B2565927B0095C7E6 /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
 		956C0F5F255EEC49000831FC /* Auto Layout Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Layout Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		956C0F62255EEC49000831FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		956C0F6B255EEC4B000831FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,6 +124,22 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		9556EE03256590D20095C7E6 /* ContactList */ = {
+			isa = PBXGroup;
+			children = (
+				9556EE08256591490095C7E6 /* ContactListController.swift */,
+			);
+			path = ContactList;
+			sourceTree = "<group>";
+		};
+		9556EE042565910A0095C7E6 /* ContactList */ = {
+			isa = PBXGroup;
+			children = (
+				9556EE052565913B0095C7E6 /* ContactListView.swift */,
+			);
+			path = ContactList;
+			sourceTree = "<group>";
+		};
 		956C0F56255EEC49000831FC = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +186,7 @@
 				9556EDE12564D9800095C7E6 /* Response.swift */,
 				9556EDE42564DAA10095C7E6 /* ContactDetails.swift */,
 				9556EDEF256518690095C7E6 /* OnboardingViewModel.swift */,
+				9556EE0B2565927B0095C7E6 /* ContactListViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +194,7 @@
 		95C15B26256006DA003A56D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9556EE042565910A0095C7E6 /* ContactList */,
 				9556EDF22565195A0095C7E6 /* Onboarding */,
 			);
 			path = View;
@@ -179,6 +203,7 @@
 		95C15B27256006E3003A56D1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9556EE03256590D20095C7E6 /* ContactList */,
 				9556EDF825652DD60095C7E6 /* Onboarding */,
 			);
 			path = Controller;
@@ -314,12 +339,15 @@
 				9556EDFE25652EFD0095C7E6 /* CollectionViewData.swift in Sources */,
 				9556EDDF2564D9720095C7E6 /* Employee.swift in Sources */,
 				9556EDE22564D9800095C7E6 /* Response.swift in Sources */,
+				9556EE062565913B0095C7E6 /* ContactListView.swift in Sources */,
 				9556EDFA25652E560095C7E6 /* OnboardingViewController.swift in Sources */,
 				9556EDBA256387560095C7E6 /* colors.swift in Sources */,
 				956C0F63255EEC49000831FC /* AppDelegate.swift in Sources */,
 				95C15B20255FEF2B003A56D1 /* K.swift in Sources */,
+				9556EE0C2565927B0095C7E6 /* ContactListViewModel.swift in Sources */,
 				9556EDF4256519840095C7E6 /* OnboardingView.swift in Sources */,
 				9556EDDC2564D9500095C7E6 /* Employees.swift in Sources */,
+				9556EE09256591490095C7E6 /* ContactListController.swift in Sources */,
 				9556EDC225638A490095C7E6 /* UIView+Extennsions.swift in Sources */,
 				9556EDF0256518690095C7E6 /* OnboardingViewModel.swift in Sources */,
 				9556EDD92564D8A40095C7E6 /* TallinnJobApi.swift in Sources */,
