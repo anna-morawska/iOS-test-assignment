@@ -35,6 +35,12 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         view.pageControl.numberOfPages = viewModel.pages.count
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        swipingViewModel.getTallinnEmployees()
+        swipingViewModel.getTartuEmployees()
+    }
+
     @objc
     private func moveSlide(sender: UIButton) {
         guard let id = sender.restorationIdentifier else { return }

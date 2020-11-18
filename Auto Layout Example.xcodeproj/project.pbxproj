@@ -14,6 +14,14 @@
 		9556EDC225638A490095C7E6 /* UIView+Extennsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDC125638A490095C7E6 /* UIView+Extennsions.swift */; };
 		9556EDC7256392DB0095C7E6 /* SwipingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDC6256392DB0095C7E6 /* SwipingView.swift */; };
 		9556EDCC2563B2D00095C7E6 /* SwipingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDCB2563B2D00095C7E6 /* SwipingViewModel.swift */; };
+		9556EDD32564D85C0095C7E6 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDD22564D85C0095C7E6 /* Networking.swift */; };
+		9556EDD62564D86D0095C7E6 /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDD52564D86D0095C7E6 /* EndpointType.swift */; };
+		9556EDD92564D8A40095C7E6 /* TallinnJobApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDD82564D8A40095C7E6 /* TallinnJobApi.swift */; };
+		9556EDDC2564D9500095C7E6 /* Employees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDDB2564D9500095C7E6 /* Employees.swift */; };
+		9556EDDF2564D9720095C7E6 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDDE2564D9720095C7E6 /* Employee.swift */; };
+		9556EDE22564D9800095C7E6 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDE12564D9800095C7E6 /* Response.swift */; };
+		9556EDE52564DAA10095C7E6 /* ContactDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDE42564DAA10095C7E6 /* ContactDetails.swift */; };
+		9556EDEA2564E0CA0095C7E6 /* TartuJobApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDE92564E0CA0095C7E6 /* TartuJobApi.swift */; };
 		956C0F63255EEC49000831FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C0F62255EEC49000831FC /* AppDelegate.swift */; };
 		956C0F6C255EEC4B000831FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956C0F6B255EEC4B000831FC /* Assets.xcassets */; };
 		95C15B1A255FB689003A56D1 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C15B19255FB689003A56D1 /* SwipingController.swift */; };
@@ -30,6 +38,14 @@
 		9556EDC125638A490095C7E6 /* UIView+Extennsions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extennsions.swift"; sourceTree = "<group>"; };
 		9556EDC6256392DB0095C7E6 /* SwipingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingView.swift; sourceTree = "<group>"; };
 		9556EDCB2563B2D00095C7E6 /* SwipingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingViewModel.swift; sourceTree = "<group>"; };
+		9556EDD22564D85C0095C7E6 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		9556EDD52564D86D0095C7E6 /* EndpointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
+		9556EDD82564D8A40095C7E6 /* TallinnJobApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallinnJobApi.swift; sourceTree = "<group>"; };
+		9556EDDB2564D9500095C7E6 /* Employees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employees.swift; sourceTree = "<group>"; };
+		9556EDDE2564D9720095C7E6 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		9556EDE12564D9800095C7E6 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		9556EDE42564DAA10095C7E6 /* ContactDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetails.swift; sourceTree = "<group>"; };
+		9556EDE92564E0CA0095C7E6 /* TartuJobApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TartuJobApi.swift; sourceTree = "<group>"; };
 		956C0F5F255EEC49000831FC /* Auto Layout Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Layout Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		956C0F62255EEC49000831FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		956C0F6B255EEC4B000831FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,6 +87,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		9556EDCF2564D77D0095C7E6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9556EDD22564D85C0095C7E6 /* Networking.swift */,
+				9556EDD52564D86D0095C7E6 /* EndpointType.swift */,
+				9556EDD82564D8A40095C7E6 /* TallinnJobApi.swift */,
+				9556EDE92564E0CA0095C7E6 /* TartuJobApi.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		956C0F56255EEC49000831FC = {
 			isa = PBXGroup;
 			children = (
@@ -92,8 +119,9 @@
 		956C0F61255EEC49000831FC /* Auto Layout Example */ = {
 			isa = PBXGroup;
 			children = (
+				9556EDCF2564D77D0095C7E6 /* Networking */,
 				9556EDC425638A580095C7E6 /* Extensions */,
-				95C15B27256006E3003A56D1 /* Controller */,
+				95C15B27256006E3003A56D1 /* ViewModel */,
 				95C15B26256006DA003A56D1 /* View */,
 				95C15B25256006CC003A56D1 /* Model */,
 				956C0F62255EEC49000831FC /* AppDelegate.swift */,
@@ -112,6 +140,10 @@
 			children = (
 				95C15B22255FF2CD003A56D1 /* Page.swift */,
 				9556EDCB2563B2D00095C7E6 /* SwipingViewModel.swift */,
+				9556EDDB2564D9500095C7E6 /* Employees.swift */,
+				9556EDDE2564D9720095C7E6 /* Employee.swift */,
+				9556EDE12564D9800095C7E6 /* Response.swift */,
+				9556EDE42564DAA10095C7E6 /* ContactDetails.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,12 +157,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		95C15B27256006E3003A56D1 /* Controller */ = {
+		95C15B27256006E3003A56D1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				95C15B19255FB689003A56D1 /* SwipingController.swift */,
 			);
-			path = Controller;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		EF03727A07D547B2391AA22A /* Frameworks */ = {
@@ -257,12 +289,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				9556EDC7256392DB0095C7E6 /* SwipingView.swift in Sources */,
+				9556EDE52564DAA10095C7E6 /* ContactDetails.swift in Sources */,
+				9556EDEA2564E0CA0095C7E6 /* TartuJobApi.swift in Sources */,
+				9556EDD32564D85C0095C7E6 /* Networking.swift in Sources */,
 				95C15B1D255FE218003A56D1 /* PageCellView.swift in Sources */,
+				9556EDDF2564D9720095C7E6 /* Employee.swift in Sources */,
+				9556EDE22564D9800095C7E6 /* Response.swift in Sources */,
 				9556EDBA256387560095C7E6 /* colors.swift in Sources */,
 				956C0F63255EEC49000831FC /* AppDelegate.swift in Sources */,
 				9556EDCC2563B2D00095C7E6 /* SwipingViewModel.swift in Sources */,
 				95C15B20255FEF2B003A56D1 /* K.swift in Sources */,
+				9556EDDC2564D9500095C7E6 /* Employees.swift in Sources */,
 				9556EDC225638A490095C7E6 /* UIView+Extennsions.swift in Sources */,
+				9556EDD92564D8A40095C7E6 /* TallinnJobApi.swift in Sources */,
+				9556EDD62564D86D0095C7E6 /* EndpointType.swift in Sources */,
 				95C15B23255FF2CD003A56D1 /* Page.swift in Sources */,
 				95C15B1A255FB689003A56D1 /* SwipingController.swift in Sources */,
 			);
