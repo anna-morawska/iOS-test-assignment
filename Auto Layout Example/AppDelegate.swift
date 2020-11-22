@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
 
         window.rootViewController = UINavigationController(rootViewController: onboardingViewController)
+//        window.rootViewController = UINavigationController(rootViewController: ContactListController())
+
         window.makeKeyAndVisible()
 
         return true

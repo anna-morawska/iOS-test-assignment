@@ -8,11 +8,12 @@ class ContactListController: UIViewController {
     }
 
     override func viewDidLoad() {
-        let view = ContactListView()
+        let view = ContactDetailsView(employee: K.mockedEmployee2)
+//        let view = ContactListView()
         self.view = view
 
         setup()
-        bind(to: view)
+//        bind(to: view)
     }
 
     private func setup() {

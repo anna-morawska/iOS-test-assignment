@@ -16,17 +16,8 @@ class PageCellView: UICollectionViewCell {
 
     private func setup() {
         imageView.contentMode = .scaleAspectFit
-
-        titleLabel.numberOfLines = 0
-        descriptionLabel.lineBreakMode = .byWordWrapping
-        titleLabel.font = .systemFont(ofSize: 22, weight: .bold)
-        titleLabel.textAlignment = .center
-
-        descriptionLabel.numberOfLines = 0
-        descriptionLabel.lineBreakMode = .byWordWrapping
-        descriptionLabel.textColor = .gray
-        descriptionLabel.font = .systemFont(ofSize: 14, weight: .light)
-        descriptionLabel.textAlignment = .center
+        titleLabel.setStyle(style: .title)
+        descriptionLabel.setStyle(style: .description)
     }
 
     private func layout() {
