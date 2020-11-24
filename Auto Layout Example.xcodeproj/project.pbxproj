@@ -32,6 +32,8 @@
 		9556EE1725665F450095C7E6 /* UILabel+Extennsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE1625665F450095C7E6 /* UILabel+Extennsions.swift */; };
 		9556EE1A2567C79E0095C7E6 /* ProfilePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE192567C79E0095C7E6 /* ProfilePhotoView.swift */; };
 		9556EE1D25698DB50095C7E6 /* UIButtton+Extennsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE1C25698DB50095C7E6 /* UIButtton+Extennsions.swift */; };
+		9556EE22256BDDFF0095C7E6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE21256BDDFF0095C7E6 /* MainCoordinator.swift */; };
+		9556EE25256C458A0095C7E6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE24256C458A0095C7E6 /* NavigationController.swift */; };
 		956C0F63255EEC49000831FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C0F62255EEC49000831FC /* AppDelegate.swift */; };
 		956C0F6C255EEC4B000831FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956C0F6B255EEC4B000831FC /* Assets.xcassets */; };
 		95C15B1D255FE218003A56D1 /* PageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C15B1C255FE218003A56D1 /* PageCellView.swift */; };
@@ -65,6 +67,8 @@
 		9556EE1625665F450095C7E6 /* UILabel+Extennsions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extennsions.swift"; sourceTree = "<group>"; };
 		9556EE192567C79E0095C7E6 /* ProfilePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoView.swift; sourceTree = "<group>"; };
 		9556EE1C25698DB50095C7E6 /* UIButtton+Extennsions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButtton+Extennsions.swift"; sourceTree = "<group>"; };
+		9556EE21256BDDFF0095C7E6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		9556EE24256C458A0095C7E6 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		956C0F5F255EEC49000831FC /* Auto Layout Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Layout Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		956C0F62255EEC49000831FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		956C0F6B255EEC4B000831FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -228,6 +232,8 @@
 			children = (
 				9556EE03256590D20095C7E6 /* ContactList */,
 				9556EDF825652DD60095C7E6 /* Onboarding */,
+				9556EE21256BDDFF0095C7E6 /* MainCoordinator.swift */,
+				9556EE24256C458A0095C7E6 /* NavigationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -360,6 +366,7 @@
 				9556EDD32564D85C0095C7E6 /* Networking.swift in Sources */,
 				95C15B1D255FE218003A56D1 /* PageCellView.swift in Sources */,
 				9556EDFE25652EFD0095C7E6 /* CollectionViewData.swift in Sources */,
+				9556EE25256C458A0095C7E6 /* NavigationController.swift in Sources */,
 				9556EE14256658470095C7E6 /* BadgeView.swift in Sources */,
 				9556EDDF2564D9720095C7E6 /* Employee.swift in Sources */,
 				9556EDE22564D9800095C7E6 /* Response.swift in Sources */,
@@ -380,6 +387,7 @@
 				9556EDF0256518690095C7E6 /* OnboardingViewModel.swift in Sources */,
 				9556EDD92564D8A40095C7E6 /* TallinnJobApi.swift in Sources */,
 				9556EDD62564D86D0095C7E6 /* EndpointType.swift in Sources */,
+				9556EE22256BDDFF0095C7E6 /* MainCoordinator.swift in Sources */,
 				95C15B23255FF2CD003A56D1 /* Page.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

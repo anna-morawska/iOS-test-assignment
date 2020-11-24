@@ -2,20 +2,20 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    internal var coordinator: Coordinator?
     internal var window: UIWindow?
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let window = UIWindow()
+
+        let navController = NavigationController()
+        self.coordinator = MainCoordinator(navigationController: navController)
+        coordinator?.start()
+
+        let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
 
-        let onboardingViewController = OnboardingViewController(
-            viewModel: OnboardingViewModel()
-        )
-
-        window.rootViewController = UINavigationController(rootViewController: onboardingViewController)
-//        window.rootViewController = UINavigationController(rootViewController: ContactListController())
-
+        window.rootViewController = navController
         window.makeKeyAndVisible()
 
         return true

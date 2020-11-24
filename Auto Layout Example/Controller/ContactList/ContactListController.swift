@@ -1,37 +1,16 @@
 import UIKit
 
-class ContactListController: UIViewController {
-    private let viewModel = ContactListViewModel()
+class ContactListController: UITableViewController {
+    private let viewModel: ContactListViewModel
 
-    init() {
+    init(viewModel: ContactListViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
     override func viewDidLoad() {
-        let view = ContactDetailsView(employee: K.mockedEmployee2)
-//        let view = ContactListView()
+        let view = UITableView()
         self.view = view
-
-        setup()
-//        bind(to: view)
-    }
-
-    private func setup() {
-        navigationItem.leftBarButtonItem = nil
-        navigationItem.hidesBackButton = true
-        navigationController?.navigationItem.backBarButtonItem?.isEnabled = false
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-    }
-
-    private func bind(to view: ContactListView) {
-
-        view.button.setTitle(viewModel.buttonLabel, for: .normal)
-        view.button.restorationIdentifier = viewModel.buttonId
-        view.button.addTarget(
-            self,
-            action: #selector(fetchData(sender:)),
-            for: .touchUpInside
-        )
     }
 
     @objc
@@ -42,5 +21,25 @@ class ContactListController: UIViewController {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension ContactListController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.employees.count
+    }
+
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: <#T##IndexPath#>)
+//    }
+}
+
+extension ContactListController: NavigationBarAppearance {
+    var isNavigationBarHidden: Bool {
+        return false
+    }
+
+    var canNavigateBack: Bool {
+        return false
     }
 }

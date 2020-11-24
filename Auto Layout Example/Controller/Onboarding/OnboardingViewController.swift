@@ -17,18 +17,6 @@ class OnboardingViewController: UIViewController {
         bind(to: view)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: false)
-    }
-
-//    TODO: viewWillTransition
-
     private func bind(to view: OnboardingView) {
         view.pageControl.numberOfPages = viewModel.pages.count
 
@@ -62,7 +50,7 @@ class OnboardingViewController: UIViewController {
 
         if id == viewModel.nextButtonId {
             if collectionViewData.currentPage == collectionViewData.pages.count - 1 {
-                navigateToContactList()
+                finishOnboarding()
             } else {
                 collectionViewData.moveSlide(forward: true)
             }
@@ -71,13 +59,24 @@ class OnboardingViewController: UIViewController {
         }
     }
 
-    private func navigateToContactList() {
-        let contactList = ContactListController()
-        self.navigationController?.pushViewController(contactList, animated: true)
+    private func finishOnboarding() {
+        if let finishOnboarding = viewModel.finishOnboarding {
+            finishOnboarding()
+        }
     }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension OnboardingViewController: NavigationBarAppearance {
+    var canNavigateBack: Bool {
+        return true
+    }
+
+    var isNavigationBarHidden: Bool {
+        return true
     }
 }

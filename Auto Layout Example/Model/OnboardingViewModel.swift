@@ -1,12 +1,12 @@
 import UIKit
 
 class OnboardingViewModel {
-    private let networking = Networking()
-
     internal let nextButtonLabel = "NEXT"
     internal let prevButtonLabel = "PREV"
     internal let prevButtonId = "prevButton"
     internal let nextButtonId = "nextButton"
+
+    internal var finishOnboarding: (() -> Void)?
 
     internal let pages =  [
         Page(
