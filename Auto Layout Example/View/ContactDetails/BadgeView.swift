@@ -44,7 +44,8 @@ class BadgeView: UIView {
 
     func layout() {
         addSubview(wrapperView)
-        wrapperView.centerInSuperview()
+
+        wrapperView.pinEdgesToSuperview(edges: [.top, .left, .bottom])
 
         wrapperView.addSubview(labelView)
         labelView.pinEdgesToSuperview(edges: [.bottom, .top], inset: 2, relation: .equal)

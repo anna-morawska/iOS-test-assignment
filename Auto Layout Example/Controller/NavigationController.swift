@@ -3,6 +3,7 @@ import UIKit
 public protocol NavigationBarAppearance {
     var isNavigationBarHidden: Bool { get }
     var canNavigateBack: Bool { get }
+    var screenTitle: String? { get }
 }
 
 class NavigationController: UINavigationController {
@@ -33,6 +34,12 @@ extension NavigationController: UINavigationControllerDelegate {
                 viewController.navigationItem.hidesBackButton = true
                 navigationItem.backBarButtonItem?.isEnabled = false
                 interactivePopGestureRecognizer?.isEnabled = false
+            }
+
+            if let title = barAppearanceViewController.screenTitle {
+                print(title)
+                navigationBar.prefersLargeTitles = true
+                viewController.title = title
             }
         }
     }

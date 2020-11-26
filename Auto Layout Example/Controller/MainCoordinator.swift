@@ -13,7 +13,8 @@ class MainCoordinator: Coordinator {
     }
 
     func start() {
-        showOnboarding()
+//        showOnboarding()
+        showContactList()
     }
 
     private func showOnboarding() {

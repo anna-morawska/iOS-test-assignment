@@ -72,6 +72,10 @@ class OnboardingViewController: UIViewController {
 }
 
 extension OnboardingViewController: NavigationBarAppearance {
+    var screenTitle: String? {
+        return nil
+    }
+
     var canNavigateBack: Bool {
         return true
     }

@@ -2,6 +2,7 @@ import UIKit
 
 class ContactListController: UITableViewController {
     private let viewModel: ContactListViewModel
+    private let identifier = "TableCell"
 
     init(viewModel: ContactListViewModel) {
         self.viewModel = viewModel
@@ -9,14 +10,14 @@ class ContactListController: UITableViewController {
     }
 
     override func viewDidLoad() {
-        let view = UITableView()
-        self.view = view
+        setup()
+        viewModel.getEmployees {
+            self.tableView.reloadData()
+        }
     }
 
-    @objc
-    private func fetchData(sender: UIButton) {
-        viewModel.getTallinnEmployees()
-        viewModel.getTallinnEmployees()
+    private func setup() {
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: identifier)
     }
 
     required init?(coder: NSCoder) {
@@ -26,15 +27,33 @@ class ContactListController: UITableViewController {
 
 extension ContactListController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.employees.count
+        return viewModel.sectionListData[section].employees.count
     }
 
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: <#T##IndexPath#>)
-//    }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.sectionListData.count
+    }
+
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = viewModel.sectionListData[section].label
+
+        return SectionHeaderView(label: label)
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        let employee = viewModel.sectionListData[indexPath.section].employees[indexPath.row]
+        cell.textLabel?.text = "\(employee.lname) \(employee.fname)"
+
+        return cell
+    }
 }
 
 extension ContactListController: NavigationBarAppearance {
+    var screenTitle: String? {
+        return "Employees"
+    }
+
     var isNavigationBarHidden: Bool {
         return false
     }
