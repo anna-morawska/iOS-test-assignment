@@ -39,6 +39,7 @@
 		9556EE5425710EED0095C7E6 /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE5325710EED0095C7E6 /* Searchable.swift */; };
 		9556EE5C2575FEEC0095C7E6 /* ContactDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE5B2575FEEC0095C7E6 /* ContactDetailsController.swift */; };
 		9556EE5F257600140095C7E6 /* ContactDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE5E257600140095C7E6 /* ContactDetailsViewModel.swift */; };
+		9556EE6225774F490095C7E6 /* FetchableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE6125774F490095C7E6 /* FetchableImage.swift */; };
 		956C0F63255EEC49000831FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C0F62255EEC49000831FC /* AppDelegate.swift */; };
 		956C0F6C255EEC4B000831FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956C0F6B255EEC4B000831FC /* Assets.xcassets */; };
 		95C15B1D255FE218003A56D1 /* PageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C15B1C255FE218003A56D1 /* PageCellView.swift */; };
@@ -79,6 +80,7 @@
 		9556EE5325710EED0095C7E6 /* Searchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchable.swift; sourceTree = "<group>"; };
 		9556EE5B2575FEEC0095C7E6 /* ContactDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsController.swift; sourceTree = "<group>"; };
 		9556EE5E257600140095C7E6 /* ContactDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewModel.swift; sourceTree = "<group>"; };
+		9556EE6125774F490095C7E6 /* FetchableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableImage.swift; sourceTree = "<group>"; };
 		956C0F5F255EEC49000831FC /* Auto Layout Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Layout Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		956C0F62255EEC49000831FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		956C0F6B255EEC4B000831FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,9 +116,11 @@
 		9556EDC425638A580095C7E6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9556EE5325710EED0095C7E6 /* Searchable.swift */,
 				9556EDC125638A490095C7E6 /* UIView+Extennsions.swift */,
 				9556EE1625665F450095C7E6 /* UILabel+Extennsions.swift */,
 				9556EE1C25698DB50095C7E6 /* UIButtton+Extennsions.swift */,
+				9556EE6125774F490095C7E6 /* FetchableImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -233,7 +237,6 @@
 				9556EE0B2565927B0095C7E6 /* ContactListViewModel.swift */,
 				9556EE27256D3F710095C7E6 /* EmployeesSection.swift */,
 				9556EE4F2571045D0095C7E6 /* Position.swift */,
-				9556EE5325710EED0095C7E6 /* Searchable.swift */,
 				9556EE5E257600140095C7E6 /* ContactDetailsViewModel.swift */,
 			);
 			path = Model;
@@ -406,6 +409,7 @@
 				9556EE0C2565927B0095C7E6 /* ContactListViewModel.swift in Sources */,
 				9556EDF4256519840095C7E6 /* OnboardingView.swift in Sources */,
 				9556EDDC2564D9500095C7E6 /* Employees.swift in Sources */,
+				9556EE6225774F490095C7E6 /* FetchableImage.swift in Sources */,
 				9556EE09256591490095C7E6 /* ContactListController.swift in Sources */,
 				9556EE1725665F450095C7E6 /* UILabel+Extennsions.swift in Sources */,
 				9556EE1D25698DB50095C7E6 /* UIButtton+Extennsions.swift in Sources */,

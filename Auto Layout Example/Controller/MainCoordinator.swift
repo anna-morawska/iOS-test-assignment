@@ -13,8 +13,8 @@ class MainCoordinator: Coordinator {
     }
 
     func start() {
-        showOnboarding()
-//        showContactList()
+//        showOnboarding()
+        showContactList()
     }
 
     private func showOnboarding() {
@@ -32,15 +32,19 @@ class MainCoordinator: Coordinator {
 
         viewModel.showContactDetails = { [weak self] section, row in
             let employee = viewModel.sectionListData[section].employees[row]
-            self?.showDetailsScreen(for: employee)
+            self?.showDetailsScreen(for: employee, contactId: section * 10 + row + 1)
         }
 
         presenter.pushViewController(ContactListController(viewModel: viewModel), animated: true)
     }
 
-    private func showDetailsScreen(for employee: Employee) {
+    private func showDetailsScreen(for employee: Employee, contactId: Int) {
         let viewModel = ContactDetailsViewModel(employee: employee)
 
-         presenter.pushViewController(ContactDetailsController(viewModel: viewModel), animated: true)
+        viewModel.fetchAvatarImage(avatarNumber: contactId) { (avatar) in
+            DispatchQueue.main.async {
+                self.presenter.pushViewController(ContactDetailsController(viewModel: viewModel, avatarImage: avatar), animated: true)
+            }
+        }
     }
 }

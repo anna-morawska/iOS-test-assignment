@@ -2,6 +2,7 @@ import UIKit
 
 class ContactDetailsView: UIView {
     private let employee: Employee
+    private let image: UIImage
     private let pictureRadius = CGFloat(100)
 
     private let nameLabel = UILabel()
@@ -13,10 +14,9 @@ class ContactDetailsView: UIView {
     private let locationButton = UIButton()
     private let phoneButton = UIButton()
 
-    private let image = UIImage(named: "Avatar")
-
-    init(employee: Employee) {
+    init(employee: Employee, avatarImage: UIImage?) {
         self.employee = employee
+        self.image = avatarImage ?? UIImage(named: "Avatar")!
 
         super.init(frame: .zero)
         setup()
@@ -68,7 +68,7 @@ class ContactDetailsView: UIView {
     }
 
     func layout() {
-        let profilePhotoView = ProfilePhotoView(photoRadius: pictureRadius, image: image!)
+        let profilePhotoView = ProfilePhotoView(photoRadius: pictureRadius, image: image)
         addSubview(profilePhotoView)
         profilePhotoView.pinEdgesToSuperview(edges: [.left, .right, .top])
         profilePhotoView.match(dimension: .height, to: self, withMultiplier: 0.4)

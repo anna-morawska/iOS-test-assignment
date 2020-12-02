@@ -2,21 +2,17 @@ import UIKit
 
 class ContactDetailsController: UIViewController {
     private let viewModel: ContactDetailsViewModel
+    private let avatarImage: UIImage?
 
-    init(viewModel: ContactDetailsViewModel) {
+    init(viewModel: ContactDetailsViewModel, avatarImage: UIImage?) {
         self.viewModel = viewModel
+        self.avatarImage = avatarImage
         super.init(nibName: nil, bundle: nil)
     }
 
     override func viewDidLoad() {
-        let view = ContactDetailsView(employee: viewModel.employee)
+        let view = ContactDetailsView(employee: viewModel.employee, avatarImage: avatarImage)
         self.view = view
-
-        bind(to: view)
-    }
-
-    private func bind(to view: ContactDetailsView) {
-
     }
 
     required init?(coder: NSCoder) {
