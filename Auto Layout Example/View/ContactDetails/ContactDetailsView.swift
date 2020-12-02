@@ -13,14 +13,10 @@ class ContactDetailsView: UIView {
     private let locationButton = UIButton()
     private let phoneButton = UIButton()
 
-    private let badge: BadgeView
-    private let image: UIImage
+    private let image = UIImage(named: "Avatar")
 
     init(employee: Employee) {
         self.employee = employee
-
-        badge = BadgeView(label: employee.position)
-        image = UIImage(named: employee.image!)!
 
         super.init(frame: .zero)
         setup()
@@ -34,7 +30,7 @@ class ContactDetailsView: UIView {
         nameLabel.text = "\(employee.fname) \(employee.lname)"
 
         emailButton.setIcon(
-            title: "anna.morawska@mooncascade.com",
+            title: employee.contact_details.email,
             image: UIImage(named: "EmailIcon")!,
             contentPadding: .zero,
             imageTitlePadding: 15)
@@ -46,10 +42,11 @@ class ContactDetailsView: UIView {
             imageTitlePadding: 15)
 
         phoneButton.setIcon(
-            title: "+48 730 493 123",
+            title: employee.contact_details.phone ?? "",
             image: UIImage(named: "PhoneIcon")!,
             contentPadding: .zero,
             imageTitlePadding: 15)
+        phoneButton.isHidden = employee.contact_details.phone?.isEmpty ?? true
 
         bioTitleLabel.setStyle(style: .subtitle)
         bioTitleLabel.text = "CONTACT DETAILS:"
@@ -58,10 +55,12 @@ class ContactDetailsView: UIView {
         projectsTitleLabel.setStyle(style: .subtitle)
         projectsTitleLabel.text = "PROJECTS:"
         projectsTitleLabel.textAlignment = .left
+        projectsTitleLabel.isHidden = employee.projects?.isEmpty ?? true
 
         projectListLabel.setStyle(style: .description)
         projectListLabel.text =  employee.projects?.joined(separator: " • ")
         projectListLabel.textAlignment = .left
+        projectListLabel.isHidden = employee.projects?.isEmpty ?? true
 
         bioLabel.setStyle(style: .description)
         bioLabel.text = "Amet consectetur adipiscing elit pellentesque habitant morbi tristiqu, pellentesque habitant morbi tristique"
@@ -69,7 +68,7 @@ class ContactDetailsView: UIView {
     }
 
     func layout() {
-        let profilePhotoView = ProfilePhotoView(photoRadius: pictureRadius, image: image)
+        let profilePhotoView = ProfilePhotoView(photoRadius: pictureRadius, image: image!)
         addSubview(profilePhotoView)
         profilePhotoView.pinEdgesToSuperview(edges: [.left, .right, .top])
         profilePhotoView.match(dimension: .height, to: self, withMultiplier: 0.4)
@@ -81,14 +80,10 @@ class ContactDetailsView: UIView {
                                          locationButton,
                                          projectsTitleLabel,
                                          projectListLabel])
-        contentStackView.axis = .vertical
-        contentStackView.alignment = .leading
-        contentStackView.distribution = .fillEqually
-        contentStackView.set(dimension: .height, to: 250)
 
         let contentContainer = UIStackView(arrangedSubviews:
                                             [nameLabel,
-                                             badge,
+                                             BadgeView(label: employee.position),
                                              bioLabel,
                                              contentStackView ])
 
@@ -96,9 +91,15 @@ class ContactDetailsView: UIView {
         contentContainer.axis = .vertical
         contentContainer.alignment = .center
         contentContainer.distribution = .fill
-        contentContainer.spacing = 30
+        contentContainer.spacing = 20
 
-        contentContainer.pinEdgesToSuperview(edges: [.left, .right], inset: 20)
+        contentStackView.pinEdgesToSuperview(edges: [.left, .right], inset: 10)
+        contentStackView.axis = .vertical
+        contentStackView.alignment = .leading
+        contentStackView.distribution = .fill
+        contentStackView.spacing = 15
+
+        contentContainer.pinEdgesToSuperview(edges: [.left, .right], inset: 20, relation: .equal)
         contentContainer.pin(edge: .top, to: .bottom, of: profilePhotoView, offset: 30, relation: .equal)
     }
 

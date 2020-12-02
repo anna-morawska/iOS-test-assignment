@@ -6,17 +6,28 @@ public protocol NavigationBarAppearance {
     var screenTitle: String? { get }
 }
 
-class NavigationController: UINavigationController {
+class NavigationController: UINavigationController, UISearchControllerDelegate {
     init() {
         super.init(nibName: nil, bundle: nil)
     }
 
     override func viewDidLoad() {
+        delegate = self
         setup()
     }
 
     private func setup() {
-        delegate = self
+        let navBarAppearance =  UINavigationBarAppearance()
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        navBarAppearance.backgroundColor = .tealBlue
+
+        navigationBar.standardAppearance = navBarAppearance
+        navigationBar.scrollEdgeAppearance = navBarAppearance
+        navigationBar.prefersLargeTitles = true
+        navigationBar.barStyle = .black
+        navigationBar.tintColor = .white
+
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -32,14 +43,24 @@ extension NavigationController: UINavigationControllerDelegate {
             if !barAppearanceViewController.canNavigateBack {
                 viewController.navigationItem.leftBarButtonItem = nil
                 viewController.navigationItem.hidesBackButton = true
-                navigationItem.backBarButtonItem?.isEnabled = false
-                interactivePopGestureRecognizer?.isEnabled = false
+                navigationController.navigationItem.backBarButtonItem?.isEnabled = false
+                navigationController.interactivePopGestureRecognizer?.isEnabled = false
             }
 
             if let title = barAppearanceViewController.screenTitle {
-                print(title)
-                navigationBar.prefersLargeTitles = true
                 viewController.title = title
+                viewController.navigationItem.largeTitleDisplayMode = .always
+            } else {
+                viewController.navigationItem.largeTitleDisplayMode = .never
+            }
+
+            if viewController is UISearchResultsUpdating {
+                let searchBar = viewController.navigationItem.searchController?.searchBar
+
+                if let textfield = searchBar?.value(forKey: "searchField") as? UITextField {
+                    textfield.textColor = .black
+                    textfield.backgroundColor = .white
+                }
             }
         }
     }

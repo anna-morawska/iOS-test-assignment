@@ -3,7 +3,6 @@ import UIKit
 class BadgeView: UIView {
     public let label: String
     private let labelView = UILabel()
-    private let wrapperView = UIView()
 
     init(label: String) {
         self.label = label
@@ -13,20 +12,20 @@ class BadgeView: UIView {
         layout()
     }
 
-    private func getColor(for position: String) -> UIColor {
+    private func getColor(for position: Position.RawValue) -> UIColor {
         switch position {
         case "IOS":
-            return .blue
+            return .orange
         case "ANDROID":
-            return .green
-        case "WEB":
             return .red
+        case "WEB":
+            return .yellow
         case "PM":
-            return .cyan
-        case "TESTER":
-            return .cyan
-        case "SALES":
             return .green
+        case "TESTER":
+            return .tealBlue
+        case "SALES":
+            return .mainPink
         default:
             return .darkGray
         }
@@ -37,17 +36,15 @@ class BadgeView: UIView {
         labelView.text = self.label
         labelView.textColor = .white
 
-        wrapperView.backgroundColor = getColor(for: label)
-        wrapperView.layer.cornerRadius = 5
-        wrapperView.clipsToBounds = true
+        let color = getColor(for: label)
+
+        backgroundColor = color
+        layer.cornerRadius = 5
+        clipsToBounds = true
     }
 
     func layout() {
-        addSubview(wrapperView)
-
-        wrapperView.pinEdgesToSuperview(edges: [.top, .left, .bottom])
-
-        wrapperView.addSubview(labelView)
+        addSubview(labelView)
         labelView.pinEdgesToSuperview(edges: [.bottom, .top], inset: 2, relation: .equal)
         labelView.pinEdgesToSuperview(edges: [.left, .right], inset: 8, relation: .equal)
     }

@@ -1,10 +1,12 @@
 import UIKit
+import Contacts
 
 class ContactListViewModel {
     private let networking = Networking()
     private let dispatchGroup = DispatchGroup()
     internal var employees = [Employee]()
-    internal var showContactDetails: (() -> Void)?
+    internal var filteredEmployees = [Employee]()
+    internal var showContactDetails: ((Int, Int) -> Void)?
 
     internal func getEmployees(completion: @escaping (() -> Void)) {
         getTallinnEmployees()
@@ -13,6 +15,10 @@ class ContactListViewModel {
         dispatchGroup.notify(queue: .main) {
             completion()
         }
+    }
+
+    internal func findMatchingContactForEmployee(employee: Employee) -> CNContact? {
+        return nil
     }
 
     internal func getTallinnEmployees() {
@@ -31,8 +37,14 @@ class ContactListViewModel {
         }
     }
 
-    internal var sectionListData: [EmployeesSection] {
-        let uniqueEmloyees = Array(Set(employees))
+    internal func filterEmployess(_ filter: String) {
+        filteredEmployees = employees.filter({ (employee) -> Bool in
+            return employee.matches(query: filter)
+        })
+    }
+
+    internal func groupEmployees(employess: [Employee]) -> [EmployeesSection] {
+        let uniqueEmloyees = Array(Set(employess))
 
         let groups = Dictionary(grouping: uniqueEmloyees) { (employee) -> String in
             return employee.position
@@ -43,5 +55,13 @@ class ContactListViewModel {
         }
 
         return sortedEmployees.sorted()
+    }
+
+    internal var filteredListData: [EmployeesSection] {
+        return groupEmployees(employess: filteredEmployees)
+    }
+
+    internal var sectionListData: [EmployeesSection] {
+        return groupEmployees(employess: employees)
     }
 }

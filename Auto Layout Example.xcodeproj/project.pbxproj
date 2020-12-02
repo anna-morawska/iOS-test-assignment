@@ -35,6 +35,10 @@
 		9556EE25256C458A0095C7E6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE24256C458A0095C7E6 /* NavigationController.swift */; };
 		9556EE28256D3F710095C7E6 /* EmployeesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE27256D3F710095C7E6 /* EmployeesSection.swift */; };
 		9556EE44256F98750095C7E6 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE43256F98750095C7E6 /* SectionHeaderView.swift */; };
+		9556EE502571045D0095C7E6 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE4F2571045D0095C7E6 /* Position.swift */; };
+		9556EE5425710EED0095C7E6 /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE5325710EED0095C7E6 /* Searchable.swift */; };
+		9556EE5C2575FEEC0095C7E6 /* ContactDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE5B2575FEEC0095C7E6 /* ContactDetailsController.swift */; };
+		9556EE5F257600140095C7E6 /* ContactDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE5E257600140095C7E6 /* ContactDetailsViewModel.swift */; };
 		956C0F63255EEC49000831FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C0F62255EEC49000831FC /* AppDelegate.swift */; };
 		956C0F6C255EEC4B000831FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956C0F6B255EEC4B000831FC /* Assets.xcassets */; };
 		95C15B1D255FE218003A56D1 /* PageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C15B1C255FE218003A56D1 /* PageCellView.swift */; };
@@ -71,6 +75,10 @@
 		9556EE24256C458A0095C7E6 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		9556EE27256D3F710095C7E6 /* EmployeesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesSection.swift; sourceTree = "<group>"; };
 		9556EE43256F98750095C7E6 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		9556EE4F2571045D0095C7E6 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		9556EE5325710EED0095C7E6 /* Searchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchable.swift; sourceTree = "<group>"; };
+		9556EE5B2575FEEC0095C7E6 /* ContactDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsController.swift; sourceTree = "<group>"; };
+		9556EE5E257600140095C7E6 /* ContactDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewModel.swift; sourceTree = "<group>"; };
 		956C0F5F255EEC49000831FC /* Auto Layout Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Layout Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		956C0F62255EEC49000831FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		956C0F6B255EEC4B000831FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -168,6 +176,14 @@
 			path = ContactDetails;
 			sourceTree = "<group>";
 		};
+		9556EE5A2575FEA10095C7E6 /* ContactDetails */ = {
+			isa = PBXGroup;
+			children = (
+				9556EE5B2575FEEC0095C7E6 /* ContactDetailsController.swift */,
+			);
+			path = ContactDetails;
+			sourceTree = "<group>";
+		};
 		956C0F56255EEC49000831FC = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +232,9 @@
 				9556EDEF256518690095C7E6 /* OnboardingViewModel.swift */,
 				9556EE0B2565927B0095C7E6 /* ContactListViewModel.swift */,
 				9556EE27256D3F710095C7E6 /* EmployeesSection.swift */,
+				9556EE4F2571045D0095C7E6 /* Position.swift */,
+				9556EE5325710EED0095C7E6 /* Searchable.swift */,
+				9556EE5E257600140095C7E6 /* ContactDetailsViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,6 +252,7 @@
 		95C15B27256006E3003A56D1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9556EE5A2575FEA10095C7E6 /* ContactDetails */,
 				9556EE03256590D20095C7E6 /* ContactList */,
 				9556EDF825652DD60095C7E6 /* Onboarding */,
 				9556EE21256BDDFF0095C7E6 /* MainCoordinator.swift */,
@@ -370,13 +390,16 @@
 				95C15B1D255FE218003A56D1 /* PageCellView.swift in Sources */,
 				9556EDFE25652EFD0095C7E6 /* CollectionViewData.swift in Sources */,
 				9556EE25256C458A0095C7E6 /* NavigationController.swift in Sources */,
+				9556EE502571045D0095C7E6 /* Position.swift in Sources */,
 				9556EE14256658470095C7E6 /* BadgeView.swift in Sources */,
 				9556EE44256F98750095C7E6 /* SectionHeaderView.swift in Sources */,
+				9556EE5425710EED0095C7E6 /* Searchable.swift in Sources */,
 				9556EDDF2564D9720095C7E6 /* Employee.swift in Sources */,
 				9556EDE22564D9800095C7E6 /* Response.swift in Sources */,
 				9556EDFA25652E560095C7E6 /* OnboardingViewController.swift in Sources */,
 				9556EDBA256387560095C7E6 /* colors.swift in Sources */,
 				956C0F63255EEC49000831FC /* AppDelegate.swift in Sources */,
+				9556EE5C2575FEEC0095C7E6 /* ContactDetailsController.swift in Sources */,
 				95C15B20255FEF2B003A56D1 /* K.swift in Sources */,
 				9556EE1A2567C79E0095C7E6 /* ProfilePhotoView.swift in Sources */,
 				9556EE10256630210095C7E6 /* ContactDetailsView.swift in Sources */,
@@ -387,6 +410,7 @@
 				9556EE1725665F450095C7E6 /* UILabel+Extennsions.swift in Sources */,
 				9556EE1D25698DB50095C7E6 /* UIButtton+Extennsions.swift in Sources */,
 				9556EDC225638A490095C7E6 /* UIView+Extennsions.swift in Sources */,
+				9556EE5F257600140095C7E6 /* ContactDetailsViewModel.swift in Sources */,
 				9556EDF0256518690095C7E6 /* OnboardingViewModel.swift in Sources */,
 				9556EE28256D3F710095C7E6 /* EmployeesSection.swift in Sources */,
 				9556EDD92564D8A40095C7E6 /* TallinnJobApi.swift in Sources */,

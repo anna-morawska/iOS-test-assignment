@@ -2,7 +2,6 @@ import UIKit
 
 class SectionHeaderView: UIView {
     public let label: String
-    private let wrapperView = UIView()
 
     init(label: String) {
         self.label = label
@@ -14,7 +13,8 @@ class SectionHeaderView: UIView {
     func layout() {
         let badge = BadgeView(label: self.label)
         addSubview(badge)
-        badge.pinEdgesToSuperview(edges: [.left, .bottom, .top], inset: 15)
+
+        badge.pinEdgesToSuperview(edges: [.left, .bottom, .top], inset: 20)
     }
 
     @available(*, unavailable)
