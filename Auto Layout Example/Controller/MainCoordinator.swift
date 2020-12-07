@@ -1,4 +1,5 @@
 import UIKit
+import ContactsUI
 
 public protocol Coordinator {
     var presenter: UINavigationController {get set}
@@ -30,21 +31,31 @@ class MainCoordinator: Coordinator {
     private func showContactList() {
         let viewModel = ContactListViewModel()
 
-        viewModel.showContactDetails = { [weak self] section, row in
-            let employee = viewModel.sectionListData[section].employees[row]
-            self?.showDetailsScreen(for: employee, contactId: section * 10 + row + 1)
+        viewModel.showContactDetails = { [weak self] employee in
+            self?.showDetailsScreen(for: employee)
         }
 
         presenter.pushViewController(ContactListController(viewModel: viewModel), animated: true)
     }
 
-    private func showDetailsScreen(for employee: Employee, contactId: Int) {
+    private func showDetailsScreen(for employee: EnrichedEmployeeData) {
         let viewModel = ContactDetailsViewModel(employee: employee)
 
-        viewModel.fetchAvatarImage(avatarNumber: contactId) { (avatar) in
+        viewModel.showContactApp = { [weak self] contact in
+            self?.showContactApp(contact: contact)
+        }
+
+        viewModel.fetchAvatarImage(avatarNumber: employee.contactId) { (avatar) in
             DispatchQueue.main.async {
                 self.presenter.pushViewController(ContactDetailsController(viewModel: viewModel, avatarImage: avatar), animated: true)
             }
         }
+    }
+
+    private func showContactApp(contact: CNContact) {
+        let contactViewController = CNContactViewController(forUnknownContact: contact)
+        contactViewController.allowsEditing = false
+        contactViewController.allowsActions = false
+        self.presenter.pushViewController(contactViewController, animated: true)
     }
 }

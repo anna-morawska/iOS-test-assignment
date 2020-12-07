@@ -28,6 +28,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>NSContactsUsageDescription</key>
+	<string>Access is needed to match phone’s built-in contacts  against the list of employees</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

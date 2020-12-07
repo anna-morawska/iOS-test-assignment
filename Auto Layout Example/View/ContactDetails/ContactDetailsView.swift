@@ -1,7 +1,8 @@
 import UIKit
 
 class ContactDetailsView: UIView {
-    private let employee: Employee
+    public let showContactDetailsButton = UIButton()
+    private let employee: EnrichedEmployeeData
     private let image: UIImage
     private let pictureRadius = CGFloat(100)
 
@@ -14,7 +15,7 @@ class ContactDetailsView: UIView {
     private let locationButton = UIButton()
     private let phoneButton = UIButton()
 
-    init(employee: Employee, avatarImage: UIImage?) {
+    init(employee: EnrichedEmployeeData, avatarImage: UIImage?) {
         self.employee = employee
         self.image = avatarImage ?? UIImage(named: "Avatar")!
 
@@ -27,26 +28,34 @@ class ContactDetailsView: UIView {
         backgroundColor = .white
 
         nameLabel.setStyle(style: .title)
-        nameLabel.text = "\(employee.fname) \(employee.lname)"
+        nameLabel.text = employee.employeeData.fullName
 
         emailButton.setIcon(
-            title: employee.contact_details.email,
+            title: employee.employeeData.contact_details.email,
             image: UIImage(named: "EmailIcon")!,
             contentPadding: .zero,
             imageTitlePadding: 15)
 
         locationButton.setIcon(
-            title: "TALLINN",
+            title: employee.location.rawValue,
             image: UIImage(named: "MapPinIcon")!,
             contentPadding: .zero,
             imageTitlePadding: 15)
 
         phoneButton.setIcon(
-            title: employee.contact_details.phone ?? "",
+            title: employee.employeeData.contact_details.phone ?? "",
             image: UIImage(named: "PhoneIcon")!,
             contentPadding: .zero,
             imageTitlePadding: 15)
-        phoneButton.isHidden = employee.contact_details.phone?.isEmpty ?? true
+        phoneButton.isHidden = employee.employeeData.contact_details.phone?.isEmpty ?? true
+
+        showContactDetailsButton.setIcon(
+            title: "Address Book",
+            image: UIImage(named: "ContactBookIcon")!,
+            contentPadding: .zero,
+            imageTitlePadding: 15)
+
+        showContactDetailsButton.isHidden = employee.contact == nil
 
         bioTitleLabel.setStyle(style: .subtitle)
         bioTitleLabel.text = "CONTACT DETAILS:"
@@ -55,12 +64,12 @@ class ContactDetailsView: UIView {
         projectsTitleLabel.setStyle(style: .subtitle)
         projectsTitleLabel.text = "PROJECTS:"
         projectsTitleLabel.textAlignment = .left
-        projectsTitleLabel.isHidden = employee.projects?.isEmpty ?? true
+        projectsTitleLabel.isHidden = employee.employeeData.projects?.isEmpty ?? true
 
         projectListLabel.setStyle(style: .description)
-        projectListLabel.text =  employee.projects?.joined(separator: " • ")
+        projectListLabel.text =  employee.employeeData.projects?.joined(separator: " • ")
         projectListLabel.textAlignment = .left
-        projectListLabel.isHidden = employee.projects?.isEmpty ?? true
+        projectListLabel.isHidden = employee.employeeData.projects?.isEmpty ?? true
 
         bioLabel.setStyle(style: .description)
         bioLabel.text = "Amet consectetur adipiscing elit pellentesque habitant morbi tristiqu, pellentesque habitant morbi tristique"
@@ -75,6 +84,7 @@ class ContactDetailsView: UIView {
 
         let contentStackView = UIStackView(arrangedSubviews:
                                         [bioTitleLabel,
+                                         showContactDetailsButton,
                                          emailButton,
                                          phoneButton,
                                          locationButton,
@@ -83,7 +93,7 @@ class ContactDetailsView: UIView {
 
         let contentContainer = UIStackView(arrangedSubviews:
                                             [nameLabel,
-                                             BadgeView(label: employee.position),
+                                             BadgeView(label: employee.employeeData.position),
                                              bioLabel,
                                              contentStackView ])
 

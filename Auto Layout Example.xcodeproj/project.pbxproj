@@ -16,7 +16,7 @@
 		9556EDD62564D86D0095C7E6 /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDD52564D86D0095C7E6 /* EndpointType.swift */; };
 		9556EDD92564D8A40095C7E6 /* TallinnJobApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDD82564D8A40095C7E6 /* TallinnJobApi.swift */; };
 		9556EDDC2564D9500095C7E6 /* Employees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDDB2564D9500095C7E6 /* Employees.swift */; };
-		9556EDDF2564D9720095C7E6 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDDE2564D9720095C7E6 /* Employee.swift */; };
+		9556EDDF2564D9720095C7E6 /* EmployeeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDDE2564D9720095C7E6 /* EmployeeData.swift */; };
 		9556EDE22564D9800095C7E6 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDE12564D9800095C7E6 /* Response.swift */; };
 		9556EDE52564DAA10095C7E6 /* ContactDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDE42564DAA10095C7E6 /* ContactDetails.swift */; };
 		9556EDEA2564E0CA0095C7E6 /* TartuJobApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EDE92564E0CA0095C7E6 /* TartuJobApi.swift */; };
@@ -40,6 +40,8 @@
 		9556EE5C2575FEEC0095C7E6 /* ContactDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE5B2575FEEC0095C7E6 /* ContactDetailsController.swift */; };
 		9556EE5F257600140095C7E6 /* ContactDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE5E257600140095C7E6 /* ContactDetailsViewModel.swift */; };
 		9556EE6225774F490095C7E6 /* FetchableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE6125774F490095C7E6 /* FetchableImage.swift */; };
+		9556EE65257B88940095C7E6 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE64257B88940095C7E6 /* Location.swift */; };
+		9556EE68257B88E70095C7E6 /* EnrichedEmployeeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556EE67257B88E70095C7E6 /* EnrichedEmployeeData.swift */; };
 		956C0F63255EEC49000831FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C0F62255EEC49000831FC /* AppDelegate.swift */; };
 		956C0F6C255EEC4B000831FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956C0F6B255EEC4B000831FC /* Assets.xcassets */; };
 		95C15B1D255FE218003A56D1 /* PageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C15B1C255FE218003A56D1 /* PageCellView.swift */; };
@@ -57,7 +59,7 @@
 		9556EDD52564D86D0095C7E6 /* EndpointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
 		9556EDD82564D8A40095C7E6 /* TallinnJobApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallinnJobApi.swift; sourceTree = "<group>"; };
 		9556EDDB2564D9500095C7E6 /* Employees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employees.swift; sourceTree = "<group>"; };
-		9556EDDE2564D9720095C7E6 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		9556EDDE2564D9720095C7E6 /* EmployeeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeData.swift; sourceTree = "<group>"; };
 		9556EDE12564D9800095C7E6 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		9556EDE42564DAA10095C7E6 /* ContactDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetails.swift; sourceTree = "<group>"; };
 		9556EDE92564E0CA0095C7E6 /* TartuJobApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TartuJobApi.swift; sourceTree = "<group>"; };
@@ -81,6 +83,8 @@
 		9556EE5B2575FEEC0095C7E6 /* ContactDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsController.swift; sourceTree = "<group>"; };
 		9556EE5E257600140095C7E6 /* ContactDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewModel.swift; sourceTree = "<group>"; };
 		9556EE6125774F490095C7E6 /* FetchableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableImage.swift; sourceTree = "<group>"; };
+		9556EE64257B88940095C7E6 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		9556EE67257B88E70095C7E6 /* EnrichedEmployeeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrichedEmployeeData.swift; sourceTree = "<group>"; };
 		956C0F5F255EEC49000831FC /* Auto Layout Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Layout Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		956C0F62255EEC49000831FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		956C0F6B255EEC4B000831FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -230,7 +234,7 @@
 			children = (
 				95C15B22255FF2CD003A56D1 /* Page.swift */,
 				9556EDDB2564D9500095C7E6 /* Employees.swift */,
-				9556EDDE2564D9720095C7E6 /* Employee.swift */,
+				9556EDDE2564D9720095C7E6 /* EmployeeData.swift */,
 				9556EDE12564D9800095C7E6 /* Response.swift */,
 				9556EDE42564DAA10095C7E6 /* ContactDetails.swift */,
 				9556EDEF256518690095C7E6 /* OnboardingViewModel.swift */,
@@ -238,6 +242,8 @@
 				9556EE27256D3F710095C7E6 /* EmployeesSection.swift */,
 				9556EE4F2571045D0095C7E6 /* Position.swift */,
 				9556EE5E257600140095C7E6 /* ContactDetailsViewModel.swift */,
+				9556EE64257B88940095C7E6 /* Location.swift */,
+				9556EE67257B88E70095C7E6 /* EnrichedEmployeeData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9556EDE52564DAA10095C7E6 /* ContactDetails.swift in Sources */,
+				9556EE68257B88E70095C7E6 /* EnrichedEmployeeData.swift in Sources */,
 				9556EDEA2564E0CA0095C7E6 /* TartuJobApi.swift in Sources */,
 				9556EDD32564D85C0095C7E6 /* Networking.swift in Sources */,
 				95C15B1D255FE218003A56D1 /* PageCellView.swift in Sources */,
@@ -397,7 +404,7 @@
 				9556EE14256658470095C7E6 /* BadgeView.swift in Sources */,
 				9556EE44256F98750095C7E6 /* SectionHeaderView.swift in Sources */,
 				9556EE5425710EED0095C7E6 /* Searchable.swift in Sources */,
-				9556EDDF2564D9720095C7E6 /* Employee.swift in Sources */,
+				9556EDDF2564D9720095C7E6 /* EmployeeData.swift in Sources */,
 				9556EDE22564D9800095C7E6 /* Response.swift in Sources */,
 				9556EDFA25652E560095C7E6 /* OnboardingViewController.swift in Sources */,
 				9556EDBA256387560095C7E6 /* colors.swift in Sources */,
@@ -414,6 +421,7 @@
 				9556EE1725665F450095C7E6 /* UILabel+Extennsions.swift in Sources */,
 				9556EE1D25698DB50095C7E6 /* UIButtton+Extennsions.swift in Sources */,
 				9556EDC225638A490095C7E6 /* UIView+Extennsions.swift in Sources */,
+				9556EE65257B88940095C7E6 /* Location.swift in Sources */,
 				9556EE5F257600140095C7E6 /* ContactDetailsViewModel.swift in Sources */,
 				9556EDF0256518690095C7E6 /* OnboardingViewModel.swift in Sources */,
 				9556EE28256D3F710095C7E6 /* EmployeesSection.swift in Sources */,

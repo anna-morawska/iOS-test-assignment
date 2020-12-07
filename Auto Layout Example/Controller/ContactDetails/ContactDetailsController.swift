@@ -1,4 +1,5 @@
 import UIKit
+import Contacts
 
 class ContactDetailsController: UIViewController {
     private let viewModel: ContactDetailsViewModel
@@ -13,6 +14,23 @@ class ContactDetailsController: UIViewController {
     override func viewDidLoad() {
         let view = ContactDetailsView(employee: viewModel.employee, avatarImage: avatarImage)
         self.view = view
+
+        bind(to: view)
+    }
+
+    private func bind(to view: ContactDetailsView) {
+        view.showContactDetailsButton.addTarget(
+            self,
+            action: #selector(showContactDetailsPressed(sender:)),
+            for: .touchUpInside
+        )
+    }
+
+    @objc
+    func showContactDetailsPressed(sender: UIButton) {
+        if let contact = viewModel.employee.contact {
+            viewModel.showContactApp?(contact)
+        }
     }
 
     required init?(coder: NSCoder) {

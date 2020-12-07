@@ -1,6 +1,6 @@
 struct EmployeesSection: Comparable {
     var label: String
-    var employees: [Employee]
+    var employees: [EnrichedEmployeeData]
 
     static func < (lhs: EmployeesSection, rhs: EmployeesSection) -> Bool {
         return lhs.label.lowercased() < rhs.label.lowercased()

@@ -5,9 +5,7 @@ class ContactListController: UITableViewController {
     private let identifier = "TableCell"
     private let searchController = UISearchController(searchResultsController: nil)
     private var sectionListData: [EmployeesSection] {
-        let isSearchBarEmpty = searchController.searchBar.text?.isEmpty ?? true
-        let isFiltering = searchController.isActive && !isSearchBarEmpty
-        return isFiltering ? viewModel.filteredListData : viewModel.sectionListData
+        return searchController.isActive  ? viewModel.filteredListData : viewModel.sectionListData
     }
 
     private let refreshControll = UIRefreshControl()
@@ -37,6 +35,9 @@ class ContactListController: UITableViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
         searchController.searchBar.placeholder = "Search employee"
+
+        searchController.searchBar.scopeButtonTitles = Location.allCases.map { $0.rawValue }
+        searchController.searchBar.delegate = self
     }
 
     @objc
@@ -52,18 +53,27 @@ class ContactListController: UITableViewController {
     }
 }
 
+extension ContactListController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        let location = Location(rawValue: searchBar.scopeButtonTitles![selectedScope])
+        viewModel.filterEmployess(searchBar.text!, location: location)
+        tableView.reloadData()
+    }
+}
+
 extension ContactListController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
+        let location = Location(rawValue:
+          searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
 
-        viewModel.filterEmployess(searchBar.text!)
+        viewModel.filterEmployess(searchBar.text!, location: location)
         tableView.reloadData()
     }
 }
 
 extension ContactListController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return sectionListData[section].employees.count
     }
 
@@ -78,13 +88,13 @@ extension ContactListController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.showContactDetails?(indexPath.section, indexPath.row)
+        viewModel.showContactDetails?(sectionListData[indexPath.section].employees[indexPath.row])
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-        let employee = sectionListData[indexPath.section].employees[indexPath.row]
-        cell.textLabel?.text = employee.fullName
+        let data = sectionListData[indexPath.section].employees[indexPath.row]
+        cell.textLabel?.text = data.employeeData.fullName
 
         return cell
     }

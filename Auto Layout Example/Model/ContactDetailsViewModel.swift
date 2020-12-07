@@ -1,9 +1,11 @@
 import UIKit
+import Contacts
 
 class ContactDetailsViewModel: FetchableImage {
-    public let employee: Employee
+    public let employee: EnrichedEmployeeData
+    internal var showContactApp: ((CNContact) -> Void)?
 
-    init(employee: Employee) {
+    init(employee: EnrichedEmployeeData) {
         self.employee = employee
     }
 
