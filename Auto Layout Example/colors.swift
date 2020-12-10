@@ -1,6 +1,8 @@
 import UIKit
 
 extension UIColor {
+    static let customBlack: UIColor = UIColor(named: "customBlack")!
+    static let customWhite: UIColor = UIColor(named: "customWhite")!
     static let mainPink: UIColor = UIColor(named: "mainPink")!
     static let fadedPink: UIColor = UIColor(named: "fadedPink")!
     static let orange: UIColor = UIColor(named: "orange")!

@@ -16,7 +16,7 @@ class PageCellView: UICollectionViewCell {
 
     private func setup() {
         imageView.contentMode = .scaleAspectFit
-        titleLabel.setStyle(style: .title)
+        titleLabel.setStyle(style: .reversedColorTitle)
         descriptionLabel.setStyle(style: .description)
     }
 

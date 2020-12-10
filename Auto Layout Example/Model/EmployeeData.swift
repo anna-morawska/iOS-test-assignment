@@ -6,7 +6,4 @@ struct EmployeeData: Codable {
     let contact_details: ContactDetails  // swiftlint:disable:this identifier_name
     let position: String
     let projects: [String]?
-    var fullName: String {
-        return "\(lname) \(fname)"
-    }
 }

@@ -1,6 +1,7 @@
 import UIKit
 import Contacts
 import ContactsUI
+import RealmSwift
 
 class ContactListViewModel {
     private let networking = Networking()
@@ -23,7 +24,7 @@ class ContactListViewModel {
         do {
             let store = CNContactStore()
             let keysToFetch = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactViewController.descriptorForRequiredKeys()] as! [CNKeyDescriptor]
-            let predicate = CNContact.predicateForContacts(matchingName: employee.fullName)
+            let predicate = CNContact.predicateForContacts(matchingName: employee.fname)
             let contact = try store.unifiedContacts(matching: predicate, keysToFetch: keysToFetch).first
 
             return contact
@@ -36,6 +37,7 @@ class ContactListViewModel {
     internal func enrichEmployeeData(employee: EmployeeData, location: Location) -> EnrichedEmployeeData {
         let contact = findMatchingContactForEmployee(employee: employee)
         currentContactId += 1
+
         return EnrichedEmployeeData(employeeData: employee, location: location, contact: contact, contactId: currentContactId)
     }
 

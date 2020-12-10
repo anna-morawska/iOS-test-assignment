@@ -7,5 +7,6 @@ target 'Auto Layout Example' do
 
   # Pods for Auto Layout Example
   pod 'SwiftLint'
+  pod 'RealmSwift'
 
 end

@@ -2,7 +2,7 @@ import UIKit
 
 public extension UILabel {
     enum LabelStyle {
-        case title, subtitle, description
+        case title, subtitle, description, reversedColorTitle
     }
 
     func setStyle(style: LabelStyle) {
@@ -10,7 +10,14 @@ public extension UILabel {
         case .title:
             self.numberOfLines = 0
             self.lineBreakMode = .byWordWrapping
-            self.textColor = .black
+            self.textColor = UIColor.label
+            self.font = .systemFont(ofSize: 22, weight: .bold)
+            self.textAlignment = .center
+
+        case .reversedColorTitle:
+            self.numberOfLines = 0
+            self.lineBreakMode = .byWordWrapping
+            self.textColor = .customBlack
             self.font = .systemFont(ofSize: 22, weight: .bold)
             self.textAlignment = .center
 

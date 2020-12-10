@@ -94,7 +94,7 @@ extension ContactListController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
         let data = sectionListData[indexPath.section].employees[indexPath.row]
-        cell.textLabel?.text = data.employeeData.fullName
+        cell.textLabel?.text = data.fullName
 
         return cell
     }

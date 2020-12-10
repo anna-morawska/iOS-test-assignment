@@ -25,10 +25,10 @@ class ContactDetailsView: UIView {
     }
 
     func setup() {
-        backgroundColor = .white
+        backgroundColor = .customWhite
 
         nameLabel.setStyle(style: .title)
-        nameLabel.text = employee.employeeData.fullName
+        nameLabel.text = employee.fullName
 
         emailButton.setIcon(
             title: employee.employeeData.contact_details.email,
